@@ -1,0 +1,230 @@
+/* ======================================== */
+/* ARQUIVO CSS ÚNICO E COMPLETO: style.css  */
+/* ======================================== */
+
+/* --- 1. Estilos Globais e de Fonte --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #333;
+}
+
+/* --- 2. Cabeçalho (Header) --- */
+.main-header {
+    background-color: #2D2D2D;
+    padding: 15px 40px;
+    border-bottom: 2px solid #00AFFF; /* Linha azul */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+    color: #FFD700; /* Amarelo */
+}
+
+.logo-title {
+    font-size: 1.8rem;
+    margin: 0 0 0 15px;
+    color: white;
+}
+
+/* --- 3. Rodapé (Footer) --- */
+.main-footer {
+    background-color: #2D2D2D;
+    padding: 20px;
+    text-align: center;
+    color: #aaa;
+    border-top: 1px solid #555;
+}
+
+/* --- 4. Página de Detalhes da Vaga --- */
+.vaga-detail-container {
+    display: flex;
+    background-color: #555555;
+    padding: 40px;
+    gap: 40px;
+    color: white;
+}
+
+/* Coluna da Esquerda (Imagens e Avaliações) */
+.vaga-column-left {
+    width: 60%;
+}
+
+.main-image-container img {
+    width: 100%;
+    border-radius: 12px;
+    height: auto;
+    display: block; /* Corrige espaçamentos extras */
+}
+
+.thumbnail-gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.thumbnail-gallery img {
+    width: 100px;
+    height: 75px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    object-fit: cover; /* Garante que a imagem preencha o espaço */
+}
+
+.thumbnail-gallery img:hover,
+.thumbnail-gallery img.active-thumb {
+    border-color: #00AFFF;
+}
+
+.reviews-section {
+    margin-top: 30px;
+    background-color: #424242;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.reviews-section h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #666;
+    padding-bottom: 10px;
+}
+
+.review {
+    margin-top: 15px; /* Adicionado para separar melhor as avaliações */
+}
+
+.star-rating { /* Estilo geral para estrelas */
+    font-size: 1.1rem;
+    color: #FFFFFF;
+}
+
+.review-comment {
+    margin: 5px 0 0 0;
+    color: #ccc;
+    font-style: italic;
+}
+
+.avaliar-btn {
+    background-color: #666;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+.avaliar-btn:hover {
+    background-color: #777;
+}
+
+/* Coluna da Direita (Infos e Reserva) */
+.vaga-column-right {
+    width: 40%;
+    background-color: #424242;
+    padding: 30px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.vaga-title {
+    margin-top: 0;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.host-info {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.host-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.description-section h4,
+.amenities-section h4 {
+    color: #00AFFF;
+    margin-bottom: 10px;
+}
+
+.description-section p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.amenities-section ul {
+    list-style: none;
+    padding: 0;
+    color: #ccc;
+}
+
+.amenities-section li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.amenities-section i {
+    color: #00AFFF;
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.price-section {
+    text-align: right;
+    font-size: 1.2rem;
+    margin-top: auto; /* Empurra o preço e o botão para o final */
+    padding-top: 20px;
+}
+
+.price-section span {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.reservar-btn {
+    width: 100%;
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.reservar-btn:hover {
+    background-color: #f0c800;
+}
+.logo-link,
+.logo-link:visited {
+    color: white;          /* Define que a cor do texto será SEMPRE branca. */
+    text-decoration: none; /* Remove a linha de sublinhado do link. */
+}

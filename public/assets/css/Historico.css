@@ -1,0 +1,152 @@
+/* ===== ARQUIVO: Historico.css ===== */
+
+/* --- 1. ESTRUTURA BASE (Sidebar, Fundo, etc.) --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #333;
+    height: 100%;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 280px;
+    background-color: #2D2D2D;
+    color: white;
+    padding: 20px;
+    flex-shrink: 0;
+    border-right: 1px solid #444;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #444;
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+    color: #FFD700;
+}
+
+.logo-title {
+    font-size: 1.8rem;
+    margin: 0 0 0 15px;
+}
+
+/* --- 2. NAVEGAÇÃO (Mantendo a estrutura com BUTTON) --- */
+.navigation {
+    margin-top: 20px;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation ul li {
+    margin-bottom: 10px;
+}
+
+.navigation a {
+    text-decoration: none;
+}
+
+.navigation button {
+    background-color: transparent;
+    border: none;
+    color: #E0E0E0;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 10px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation button:hover {
+    background-color: #3a3a3a;
+}
+
+.navigation button i {
+    margin-right: 15px;
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+}
+
+.navigation button.active {
+    background-color: #4A4A4A;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+/* --- 3. CONTEÚDO PRINCIPAL --- */
+.main-content {
+    flex-grow: 1;
+    background-color: #424242;
+    padding: 40px;
+}
+
+.page-title {
+    color: #58a6ff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.page-subtitle {
+    color: #E0E0E0;
+    font-size: 1.1rem;
+    margin: 0 0 40px 0;
+}
+
+/* --- 4. ESTILOS ESPECÍFICOS DA PÁGINA DE HISTÓRICO (Cards) --- */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-placeholder {
+    background-color: #D9D9D9;
+    border-radius: 8px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card-description {
+    color: #BDBDBD;
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 0;
+}
+.logo-link,
+.logo-link:visited {
+    color: white;          /* Define que a cor do texto será SEMPRE branca. */
+    text-decoration: none; /* Remove a linha de sublinhado do link. */
+}

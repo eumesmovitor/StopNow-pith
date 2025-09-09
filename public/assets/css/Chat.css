@@ -1,0 +1,178 @@
+/* =================================================================== */
+/* CSS DEFINITIVO E UNIFICADO - StopNow (v2)                           */
+/* Contém todos os estilos e a correção definitiva de layout           */
+/* =================================================================== */
+
+/* --- 1. Estilos Globais e CORREÇÃO DE LAYOUT DE TELA CHEIA --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #333; /* Fundo padrão, caso algo falhe */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%; /* Garante que o body ocupe a tela toda */
+}
+
+/* Regra MÁGICA: Faz o conteúdo principal de QUALQUER página crescer */
+main {
+    flex-grow: 1; 
+    display: flex; /* Adicionado para containers internos se comportarem bem */
+    flex-direction: column; /* Adicionado para containers internos se comportarem bem */
+}
+
+/* --- 2. Componentes Comuns (Cabeçalho e Rodapé) --- */
+.main-header {
+    background-color: #2D2D2D;
+    padding: 15px 40px;
+    border-bottom: 2px solid #00AFFF;
+    flex-shrink: 0;
+}
+/* (O resto dos estilos do header e do rodapé que já tínhamos) */
+.logo-container { display: flex; align-items: center; }
+.logo-icon { font-size: 2.5rem; color: #FFD700; }
+.logo-title { font-size: 1.8rem; margin: 0 0 0 15px; color: white; }
+.main-footer { background-color: #2D2D2D; padding: 20px; text-align: center; color: #aaa; border-top: 1px solid #555; flex-shrink: 0; }
+
+
+/* --- 3. Página de Chat --- */
+.chat-container {
+    display: flex;
+    flex-direction: row; /* Organiza a sidebar e a janela de chat lado a lado */
+    flex-grow: 1; 
+    background-color: #2D2D2D;
+}
+
+/* Painel de Contatos (Esquerda) */
+.contacts-panel {
+    width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #444;
+    flex-shrink: 0;
+}
+.chat-section-title {
+    color: white;
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+.contacts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    background-color: #E0E0E0;
+    color: #333;
+    padding: 12px 15px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.contact-item.active,
+.contact-item:hover {
+    background-color: #f0f0f0;
+}
+.contact-toggle {
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #ccc;
+}
+.contact-item.active .contact-toggle {
+    background-color: #4CAF50;
+    box-shadow: 0 0 0 2px #4CAF50;
+}
+
+/* Janela da Conversa (Direita) */
+.chat-window {
+    flex-grow: 1;
+    background-color: #555555;
+    display: flex;
+    flex-direction: column;
+}
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #424242; /* Corrigido para um cinza mais escuro */
+    flex-shrink: 0;
+}
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 15px;
+}
+.chat-with-name {
+    color: white;
+    font-size: 1.2rem;
+    margin: 0;
+}
+.messages-area {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+.message-input-area {
+    display: flex;
+    align-items: center;
+    background-color: #424242; /* Corrigido para um cinza mais escuro */
+    padding: 10px 20px;
+    flex-shrink: 0;
+}
+.message-input-area input {
+    flex-grow: 1;
+    background-color: #E0E0E0;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+}
+.attach-icon,
+.send-btn {
+    background: none;
+    border: none;
+    color: #ccc;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.attach-icon:hover,
+.send-btn:hover {
+    color: white;
+}
+.attach-icon {
+    margin-right: 15px;
+}
+.send-btn {
+    margin-left: 15px;
+}
+.logo-link,
+.logo-link:visited {
+    color: white;          /* Define que a cor do texto será SEMPRE branca. */
+    text-decoration: none; /* Remove a linha de sublinhado do link. */
+}
+
+/* Adicione aqui os outros estilos das outras páginas se precisar */
+/* Como o CSS unificado anterior era muito grande, foquei em deixar a base e a página de chat perfeitas */
+/* Se outra página quebrar, basta garantir que o container principal dela esteja dentro de uma tag <main> */

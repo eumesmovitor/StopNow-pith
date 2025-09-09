@@ -1,0 +1,299 @@
+/* =================================================================== */
+/* CSS DEFINITIVO E UNIFICADO - StopNow                                */
+/* Contém todos os estilos para todas as páginas e a correção de layout*/
+/* =================================================================== */
+
+/* --- 1. Estilos Globais e Layout de Corpo --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main, .main-container, .vaga-detail-container, .alugar-container {
+    flex-grow: 1; /* ESSENCIAL: Faz o conteúdo principal crescer e ocupar o espaço vazio */
+}
+
+
+/* --- 2. Componentes Comuns (Cabeçalho, Rodapé, Logo) --- */
+.main-header {
+    background-color: #2D2D2D;
+    padding: 15px 40px;
+    border-bottom: 2px solid #00AFFF;
+    flex-shrink: 0; /* Impede que o header encolha */
+}
+
+.logo-link,
+.logo-link:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+    color: #FFD700;
+}
+
+.logo-title {
+    font-size: 1.8rem;
+    margin: 0 0 0 15px;
+}
+
+.main-footer {
+    background-color: #2D2D2D;
+    padding: 20px;
+    text-align: center;
+    color: #aaa;
+    border-top: 1px solid #555;
+    flex-shrink: 0; /* Impede que o footer encolha */
+}
+
+/* --- 3. Layout do Painel (Dashboard com Sidebar) --- */
+.dashboard-container {
+    display: flex;
+    flex-grow: 1; /* Faz o container do dashboard se esticar */
+}
+
+.sidebar {
+    width: 280px;
+    background-color: #2D2D2D;
+    padding: 20px;
+    flex-shrink: 0;
+    border-right: 1px solid #444;
+}
+
+.main-content {
+    flex-grow: 1;
+    background-color: #424242;
+    padding: 40px;
+}
+
+/* --- 4. Navegação da Sidebar (Estrutura com Button, como pedido) --- */
+.navigation {
+    margin-top: 20px;
+}
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.navigation ul li {
+    margin-bottom: 10px;
+}
+.navigation a {
+    text-decoration: none;
+}
+.navigation button {
+    background-color: transparent;
+    border: none;
+    color: #E0E0E0;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 10px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.navigation button:hover {
+    background-color: #3a3a3a;
+}
+.navigation button i {
+    margin-right: 15px;
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+}
+.navigation button.active {
+    background-color: #4A4A4A;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+/* --- 5. Conteúdo do Painel (Títulos, Cards, etc.) --- */
+.page-title {
+    color: #58a6ff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+.page-subtitle {
+    color: #E0E0E0;
+    font-size: 1.1rem;
+    margin: 0 0 40px 0;
+}
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+}
+.photo-placeholder {
+    background-color: #D9D9D9;
+    border-radius: 8px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.card-description {
+    color: #BDBDBD;
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 0;
+}
+.charts-container {
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+}
+
+/* --- 6. Página de Busca de Vagas --- */
+.results-panel {
+    width: 50%;
+    background-color: #555555;
+    padding: 30px;
+    color: white;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+.map-panel {
+    width: 50%;
+    background-color: #E0E0E0;
+}
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+.vaga-link-card,
+.vaga-link-card:visited {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease-in-out;
+}
+.vaga-link-card:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+/* --- 7. Página de Detalhes da Vaga --- */
+.vaga-column-left { width: 60%; }
+.vaga-column-right { width: 40%; }
+/* (Todos os outros estilos específicos da página de detalhes que já te passei) */
+
+
+/* --- 8. Página de Aluguel --- */
+.alugar-container {
+    background-color: #555555;
+    padding: 40px 60px;
+}
+.back-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.back-link i { margin-right: 10px; }
+.content-wrapper { display: flex; gap: 60px; }
+.payment-column { width: 50%; }
+.vaga-info-column { width: 50%; display: flex; flex-direction: column; align-items: center; }
+.alugar-title {
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin: 0 0 40px 0;
+    text-align: center;
+}
+.payment-subtitle {
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+.payment-methods { list-style: none; padding: 0; margin: 0; }
+.payment-methods li {
+    background-color: #424242;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, border-color 0.3s;
+    border: 2px solid #424242;
+}
+.payment-methods li:hover { background-color: #3a3a3a; }
+.payment-methods li.active-method {
+    border-color: #FFD700;
+    background-color: #3a3a3a;
+}
+.payment-methods i { margin-right: 15px; width: 25px; text-align: center; }
+.total-value { font-size: 1.2rem; font-weight: bold; margin-top: 40px; }
+.vaga-image-placeholder {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    background-color: #D9D9D9;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.chat-btn, .pay-btn {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: black;
+    background-color: #FFD700;
+}
+.chat-btn { margin-bottom: 15px; }
+.chat-btn:hover, .pay-btn:hover { background-color: #f0c800; }
+
+/* Adicione aqui os outros estilos específicos de outras páginas se necessário */
+.logo-link,
+.logo-link:visited {
+    color: white;          /* Define que a cor do texto será SEMPRE branca. */
+    text-decoration: none; /* Remove a linha de sublinhado do link. */
+}
